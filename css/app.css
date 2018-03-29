@@ -1,0 +1,231 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png');
+    /* Background pattern from Subtle Patterns */
+    font-family: 'Limelight', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Faster One', cursive;
+    font-weight: 400;
+    font-size: 3em;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 697px;
+    min-height: 805px;
+    background: linear-gradient(to bottom right, #02ccba, #deef1370, #02ccba, #deef1370, #02ccba, #deef1370);
+    padding: 31px;
+    border-radius: 19px;
+    box-shadow: 18px 18px 13px 0px rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh 0 3em;
+}
+
+.deck .card {
+    height: 155px;
+    width: 132px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 18px 18px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #b9ab318a;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 50px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 50px;
+}
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 545px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    display: inline;
+    cursor: pointer;
+    margin-left: 2vw;
+}
+
+.fa-refresh:hover {
+  cursor: pointer;
+  font-size: 2em;
+}
+
+p {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2em;
+}
+
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes dash-check {
+    0% {
+        stroke-dashoffset: -100;
+    }
+    100% {
+        stroke-dashoffset: 400;
+    }
+}
+
+@keyframes dash-check {
+    0% {
+        stroke-dashoffset: -100;
+    }
+    100% {
+        stroke-dashoffset: 400;
+    }
+}
+
+
+.success {
+  font-size: 4em;
+}
+
+#sucess-result {
+    display: block;
+}
+
+svg {
+    width: 100px;
+    display: block;
+    margin: 25vh auto 0;
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+}
+.path.circle {
+    -webkit-animation: dash 0.9s ease-in-out;
+    animation: dash 0.9s ease-in-out;
+}
+.path.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+    animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+.path.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+    animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+
+.score-titles {
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.score-values {
+    font-weight: 100;
+    margin-right: 1vw;
+}
+
+.top-center {
+    text-align: center;
+}
+
+.stars {
+    color: #D4AF37;
+}
+
+.star {
+    display: inline;
+    margin: 15px;
+    color: #D4AF37;
+}
+
+.text-right {
+    float: right;
+}
+
+#restart {
+    font-size: 1em;
+}
+
+.bottom-line {
+  margin-top: 4vh;
+}
