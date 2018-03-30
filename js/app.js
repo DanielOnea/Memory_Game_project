@@ -12,14 +12,14 @@ var cardLists = [
         "fa-bomb"
       ];
 // to store number of moves and matches found
-var moves = 0;
-var match_found = 0;
+let moves = 0;
+let match_found = 0;
 
 // check when first card is opened
-var game_started = false;
+let game_started = false;
 
 // timer object
-var timer = new Timer();
+let timer = new Timer();
 timer.addEventListener('secondsUpdated', function (e) {
     $('#timer').html(timer.getTimeValues().toString());
 });
@@ -33,7 +33,7 @@ function createCard(card) {
 }
 // generate random cards on the deck
 function generateCards() {
-    for (var i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {
         cardLists = shuffle(cardLists);
         cardLists.forEach(createCard);
     }
@@ -41,7 +41,7 @@ function generateCards() {
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length
+    let currentIndex = array.length
         , temporaryValue, randomIndex;
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -143,7 +143,7 @@ function addBlankStar() {
 }
 // add initial stars
 function addStars() {
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         $('#rating').append('<li><i class="fa fa-star"></i></li>');
     }
 }
@@ -159,6 +159,7 @@ function resetGame() {
     timer.stop();
     $('#timer').html("00:00:00");
     playGame();
+    removeOpenCards();
 }
 
 // game start
@@ -175,7 +176,7 @@ function playGame() {
 function showResults() {
     $('#sucess-result').empty();
     timer.pause();
-    var scoreBoard = `
+    const scoreBoard = `
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 135">
             <circle class="path circle" fill="none" stroke="#8bda7d" stroke-width="8" stroke-miterlimit="10" cx="67" cy="67" r="60" />
             <polyline class="path check" fill="none" stroke="#8bda7d" stroke-width="8" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " /></svg>
