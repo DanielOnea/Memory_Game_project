@@ -12,3 +12,11 @@ This is a complete browser-based card matching game.
 
 
 ## 
+
+The game can be played here https://danielonea.github.io/Memory_Game_project/
+
+##
+
+This project uses:
+* Awesome Fonts (https://fontawesome.com/v4.7.0/icons/)
+* easytimer (https://albert-gonzalez.github.io/easytimer.js/) and jquery libraries.
